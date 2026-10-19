@@ -27,10 +27,10 @@ class UserRepositoryTest {
     EntityManager entityManager;
 
     @Test
-    @DisplayName("Should get User successfully from DB")
+    @DisplayName("Should get user successfully from database")
     void findUserByDocumentCase1() {
-        String document = "99999999901";
-        UserDTO data = new UserDTO("Fernanda", "Teste", document, new BigDecimal(10), "test@gmail.com", "44444", UserType.COMMON);
+        String document = "999999901";
+        UserDTO data = new UserDTO("Ian", "Teste", document, new BigDecimal(10), "test@gmail.com", "444444", UserType.COMMON);
         this.createUser(data);
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
@@ -39,9 +39,9 @@ class UserRepositoryTest {
     }
 
     @Test
-    @DisplayName("Should not get User from DB when user not exists")
+    @DisplayName("Should not get user from database when user not exists")
     void findUserByDocumentCase2() {
-        String document = "99999999901";
+        String document = "999999901";
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
 
